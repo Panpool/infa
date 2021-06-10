@@ -43,23 +43,34 @@
            clear: both;
            display: table;
        }
-       img.wilk {
-           width: 35%;
-           height: auto;
-           display: inline;
-           float: left;
-           padding: 10px;
+       img {
+           border: solid 5px black;
+           width: 100%;
        }
-       .img-text {
-           display: inline;
+
+       input {
+           font-size: 25px;
+           font-family: lato;
+           text-align: center;
+           background-color: transparent;
+           border-radius: 0%;
+           cursor: pointer;
        }
-       p {
-           
-           margin: 0px;
+
+       input:hover {
+           background-color: black;
+           color: white;
+           transition: 1s;
        }
-       a {
-           text-decoration: none;
-           color: black;
+       span {
+           font-size: 25px;
+           font-family: lato;
+           margin-right: 5px;
+           margin-left: 5px;
+           border: solid 2px black;
+           padding-left: 10px;
+           padding-right: 10px;
+
        }
        </style>
         
@@ -87,6 +98,7 @@
             
             var file = "<img src=\"photos/photo" + numerslajdu + ".png\"/>" ;
             document.getElementById("slide").innerHTML = file;
+            document.getElementById("numerslide").innerHTML = numerslajdu;
             
             
             
@@ -97,14 +109,17 @@
        </script>
 
     </head> 
-    <body onload="slajd()">
+    <body onload="slajd()" id="body">
         <title>Piękne miejsca</title>
         <div class="title">Piękne miejsca</div>
         
         <div id="slide"></div>
+        <center>       
+            <input type="submit" value="<< Poprzednie" onclick="back()">
+            <span id="numerslide"></span>
+            <input type="submit" value="Następne >>" onclick="next()">
+        </center>
 
-        <input type="submit" value="Wstecz" onclick="back()">
-        <input type="submit" value="Następne" onclick="next()">
         
 
     </body>
