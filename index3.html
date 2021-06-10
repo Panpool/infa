@@ -62,59 +62,50 @@
            color: black;
        }
        </style>
+        
+       <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="   crossorigin="anonymous"></script>
+       <script>
+
+        var numerslajdu = 1; 
+
+        function next() {
+            numerslajdu++;
+            if(numerslajdu >12) numerslajdu = 1;
+            return slajd();
+        }
+
+        
+        function back() { 
+            numerslajdu--;
+            if(numerslajdu <1) numerslajdu = 12;
+            return slajd(); 
+
+            
+        }
+
+        function slajd() {
+            
+            var file = "<img src=\"photos/photo" + numerslajdu + ".png\"/>" ;
+            document.getElementById("slide").innerHTML = file;
+            
+            
+            
+            
+        }
+
+
+       </script>
+
     </head> 
-    <body>
+    <body onload="slajd()">
         <title>Piękne miejsca</title>
         <div class="title">Piękne miejsca</div>
         
-        <div class="comain">
-            <img class="wilk" src="https://ocdn.eu/pulscms-transforms/1/B4kk9kpTURBXy80NjBkNTlmNGVjZDY3NDJkY2U1MTRhNWI0ZmQ3MDQ3Mi5qcGeSlQLNA8AAwsOVAgDNA8DCw4GhMAU">
-            <div class="img-text">Woliński Park Narodowy utworzony w 1960 roku obejmuje ochroną część największej polskiej wyspy - Wolin (woj. zachodniopomorskie). Szczególne walory parku to: najpiękniejszy odcinek polskiego wybrzeża klifowego, dobrze zachowane lasy bukowe, unikalna - wyspiarska delta Świny, przybrzeżny pas wód Bałtyku. Na obszarze parku (i w sąsiedztwie jego granic) znajdują się ślady pozostałości grodzisk i miejsc związanych z osadnictwem z czasów historycznych. Szczególnie liczne są ślady związane z czasami ostatniej wojny: okopy, bunkry oraz pozostałości fundamentów broni V-3.</div>
-        </div>
+        <div id="slide"></div>
 
-        <div class="comain">
-            <img class="wilk" src="https://ocdn.eu/pulscms-transforms/1/qQJk9kpTURBXy82OGI1ZWEzMjYwY2Y3OGI3NmY2NDI2MGU3ZDAyY2JmNS5qcGeSlQLNA8AAwsOVAgDNA8DCw4GhMAU">
-            <div class="img-text">Trzęsacz uważany jest za największą atrakcję turystyczną na zachodnim Wybrzeżu. W lecie zjeżdżają tutaj tłumy, by przyjrzeć się ruinom kościoła św. Mikołaja, który padł ofiarą cofającego się klifu. Od niedawna niezapomniany widok na plażę, ruiny i nadmorskie urwiska można podziwiać z nowego tarasu widokowego.</div>
-        </div>
-        <div class="comain">
-            <img class="wilk" src="https://ocdn.eu/pulscms-transforms/1/nJvk9kqTURBXy81Mzk5YmVmNGY2NjQ5NjQ1YjJkM2YzNWU3ZTE1MjkzZS5qcGVnkpUCzQPAAMLDlQIAzQPAwsOBoTAF">
-            <div class="img-text">Pojezierze Drawskie obejmuje szeroki pas jezior ciągnący się na południowy zachód od górnej Gwdy po środkową Drawę, osłonięty od północy potężnym wałem morenowym. W krajobraz wpisują się wielkie połacie lasów i uśpione miasteczka między meandrami spławnych rzek. Najcenniejsze partie obejmuje Drawieński Park Narodowy, utworzony w 1990 r. Odznacza się bogactwem występujących tu typów ekosystemów. Miarą tego bogactwa jest liczba 224 udokumentowanych zbiorowisk roślinnych. Powierzchniowo dominują lasy - stanowią ponad 80 proc. powierzchni parku - przede wszystkim buczyny, łęgi olszowe i olsy, a także płaty borów sosnowych. Przepływająca przez teren parku Drawa należy do najpiękniejszych szlaków kajakowych w Polsce.</div>
-        </div>
-        <div class="comain">
-            <img class="wilk" src="https://ocdn.eu/pulscms-transforms/1/mlGk9kpTURBXy8xYzExMTViYzBjNzQzODk1MDI2NjkxNGU4OTMwMTRhNi5qcGeSlQLNA8AAwsOVAgDNA8DCw4GhMAU">
-            <div class="img-text">Warta, trzecia pod względem długości rzeka w Polsce, jest prawym dopływem Odry. Źródła rzeki znajdują się na Wyżynie Krakowsko-Częstochowskiej. Warta przepływa przez Częstochowę, Koło, Poznań, Gorzów Wielkopolski i Kostrzyn nad Odrą, gdzie uchodzi do Odry. Na terenie województwa wielkopolskiego tworzy malowniczy Poznański Przełom Warty - odcinek dolnej Warty o długości 45 km, który oddziela Wysoczyznę Poznańską od Gnieźnieńskiej. Przełom ten powstał na skutek przekształcenia rynny polodowcowej w dolinę rzeczną z terasami. Przez setki lat Warta była wykorzystywana do przewożenia towarów drogą sródlądową. Jeszcze na początku XX w. rozwijał się tu rzeczny transport zboża do Berlina. Port w Poznaniu cały czas tętnił życiem, budowano magazyny i spichlerze. Jednak po zniszczeniach drugiej wojny światowej gospodarcza rola rzeki zmalała prawie do zera.</div>
-        </div>
-        <div class="comain">
-            <img class="wilk" src="https://ocdn.eu/pulscms-transforms/1/osJk9kpTURBXy9mYTIzMTJmN2M1ZDIyMTYwNTcwMDY4ODZjMDBjYTI4Ni5qcGeSlQLNA8AAwsOVAgDNA8DCw4GhMAU">
-            <div class="img-text">Wielka Pętla Wielkopolski to prawie siedemsetkilometrowy szlak żeglugi śródlądowej, z którego połowa przebiega przez województwo wielkopolskie, a pozostała część przez lubuskie i kujawsko-pomorskie. Opłynięcie całej trasy może zająć ponad miesiąc, ale szlak można zwiedzać krótszymi odcinkami, dzieląc żeglowanie ze spacerami w mijanych miastach, odwiedzaniu interesujących miejsc, jak opactwo Cystersów w Lądzie nad Wartą i wędrówkami po lasach. Większe przystanie na szlaku to Sławsk, Mikorzyn i Konin-Pątnów. Inne dogodne miejsca do cumowania to Mściszewo, Obrzycko i Ślesin. Droga wodna pętli obejmuje Wartę na odcinku Konin - Santok, Noteć na odcinku Santok - Kanał Bydgoski i drogę wodną przez jezioro Gopło i jeziora konińskie do Warty w Koninie.</div>
-        </div>
-        <div class="comain">
-            <img class="wilk" src="https://ocdn.eu/pulscms-transforms/1/XCsk9kpTURBXy9lYTM4ZWE1ZDQ2MDZlZmI5NTA2MTE2ODc1NTEwYWE5OS5qcGeSlQLNA8AAwsOVAgDNA8DCw4GhMAU">
-            <div class="img-text">Nazywane przez turystów "mazurskimi Bieszczadami", wzniesienia morenowe, stanowią część Pojezierza Chełmińsko-Dobrzyńskiego. W miejscowości Wysoka Wieś odnajdziemy najwyższy punkt Krajobrazowego Parku Wzgórz Dylewskich, czyli Dylewską Górę. Na wysokości 312 m n.p.m ulokowano wieżę widokową oraz początek ścieżki edukacyjnej, biegnącej aż do Rezerwatu Jeziora Francuskiego.</div>
-        </div>
-        <div class="comain">
-            <img class="wilk" src="https://ocdn.eu/pulscms-transforms/1/6puk9kpTURBXy80OTYzNjU1ZmRiYmYyMjY4NDYwMTUxZjNjOTVlYWFhYy5qcGeSlQLNA8AAwsOVAgDNA8DCw4GhMAU">
-            <div class="img-text">Jednym z najpopularniejszych miejsc Pojezierza Iławskiego jest 82-kilometrowy Kanał Elbląski. Historyczna droga wodna pozwala na obcowanie z niezwykłą przyrodą i krajobrazem tego regionu. Charakterystycznym elementem są zróżnicowane poziomy kanału rozciągające się na długości niemal 10 kilometrów. Kanał, z jedynym w Europie działającym systemem pochylni, znalazł się na Liście siedmiu cudów Polski.</div>
-        </div>
-        <div class="comain">
-            <img class="wilk" src="https://ocdn.eu/pulscms-transforms/1/LjQk9kpTURBXy84ZjFjNTVmMzRhMjMzODE5ZGY4NzI3MzAzZGMzYTQ5ZS5qcGeSlQLNA8AAwsOVAgDNA8DCw4GhMAU">
-            <div class="img-text">Żeglarska stolica Polski (walczy o to miano z Mikołajkami) położona jest pomiędzy jeziorami Kisajno i Niegocin. Jednym z najciekawszych wydarzeń jest giżycki tydzień żeglarski oraz wielkie otwarcie sezonu na Kanale Łuczańskim. Warto odwiedzić najnowocześniejszy i największy port pasażerski Ekomarina, zobaczyć most obrotowy i twierdzę Boyen</div>
-        </div>
-        <div class="comain">
-            <img class="wilk" src="https://ocdn.eu/pulscms-transforms/1/n2lk9kqTURBXy81NTgyOGRlNWQxNDkwNmU1MjljMmNlOWQyMWUwNTU1Zi5qcGVnkpUCzQPAAMLDlQIAzQPAwsOBoTAF">
-            <div class="img-text">Ponidzie to kraina słynąca z największych w Europie złóż gipsu, rezerwatów z unikalną roślinnością stepową, kolorowych lasów, przydrożnych figur i kapliczek, zabytków oraz źródeł siarczano-słonych wód mineralnych. Swoim obszarem obejmuje m.in. miejscowości: Jędrzejów, Pińczów, Busko-Zdrój, Wiślica i Nowy Korczyn. Charakterystycznym elementem krajobrazu Ponidzia jest dolina Nidy z licznymi meandrami i starorzeczami, stanowiąca istotny korytarz ekologiczny oraz ostoję ptactwa wodno-błotnego. Ponidzie to doskonałe miejsce do aktywnego wypoczynku dla miłośników wycieczek pieszych, rowerowych, kajakarzy, jeźdźców, a nawet lotniarzy.</div>
-        </div>
-        <div class="comain">
-            <img class="wilk" src="https://ocdn.eu/pulscms-transforms/1/4Zgk9kpTURBXy9mYTI4MjYyZjI0YTNiOGRlZDZjNjYzNjcxYjQ0OTNkOS5qcGeSlQLNA8AAwsOVAgDNA8DCw4GhMAU">
-            <div class="img-text">Szydłów położony jest około 40 km na południowy wschód od Kielc. Z powodu doskonale zachowanego średniowiecznego układu urbanistycznego oraz murów miejskich, już przed laty zyskał miano "polskiego Carcassonne". Wykonane z lokalnego wapienia w XIV w. mury mierzyły 1080 m długości do 1,8 m szerokości. Miały trzy bramy: Krakowską, Sandomierską i Opatowską. Dzisiaj podziwiać możemy jedynie bramę Krakowską. Na fortyfikację składały się też ponad 10-metrowe baszty. Zamek wzniesiono w połowie XV wieku. W Skarbczyku powstałym na skutek przebudowania okrągłej baszty obronnej w poł. XVI wieku mieści się Muzeum Regionalne. W obrębie murów miejskich tuż przy rynku zachowała się renesansowa synagoga.</div>
-        </div>
-        <div class="comain">
-            <img class="wilk" src="https://ocdn.eu/pulscms-transforms/1/AEFk9kpTURBXy81N2JjNzc2NzJhNDIwNGRhMTczNDYzYzVmZDAwYTU2Ni5qcGeSlQLNA8AAwsOVAgDNA8DCw4GhMAU">
-            <div class="img-text">Sandomierz jest bez wątpienia jednym z najpiękniejszych miast w Polsce. Malowniczo położony na siedmiu wzgórzach nad Wisłą kusi licznymi atrakcjami. Tutejszy rynek uznawany jest za jeden z najpiękniejszych w kraju. XIV-wieczny ratusz z renesansową attyką otacza 30 zabytkowych kamienic. Przez ten rynek jeździ na rowerze "Ojciec Mateusz" z popularnego serialu. Stare miasto najlepiej obejrzeć z punktu widokowego w Bramie Opatowskiej. Warto zajrzeć do kolegiaty, kościoła św. Jakuba, Domu Długosza oraz Collegium Gostomianum - jednej z najstarszych szkół średnich w Polsce. W zachowanej części zamku mieści się muzeum. Pod starym miastem przebiega podziemna trasa turystyczna, natomiast do wycieczek zachęcają wąwozy lessowe w okolicach miasta.</div>
-        </div>
-        <div class="comain">
-            <img class="wilk" src="https://ocdn.eu/pulscms-transforms/1/nyBk9kpTURBXy9kZjMxZmE2NzYwZGZkYjY1YTIwZTE2MjdiY2E4YTBkYy5qcGeSlQLNA8AAwsOVAgDNA8DCw4GhMAU">
-            <div class="img-text">Krajobraz Jury Krakowsko-Częstochowskiej w okolicach Częstochowy jest niezwykle malowniczy, a fantastyczny widok zamkowych ruin i ostańców na wzgórzach koło Olsztyna na długo pozostaje w pamięci. Za czasów Kazimierza Wielkiego wybudowano twierdzę Olsten. Nazwa wywodzi się od niemieckiego Hohlstein, tłumaczonego jako "wydrążona skała", co ma związek z systemem jaskiń i piwnic (dziś zasypanych) pod fortecą.</div>
-        </div>
+        <input type="submit" value="Wstecz" onclick="back()">
+        <input type="submit" value="Następne" onclick="next()">
+        
+
     </body>
 </html>
