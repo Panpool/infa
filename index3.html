@@ -44,7 +44,9 @@
            display: table;
        }
        img {
+           
            width: 100%;
+           
        }
 
        input {
@@ -56,12 +58,13 @@
            cursor: pointer;
        }
 
-       input:hover {
+       .btn-img:hover {
            background-color: black;
            color: white;
            transition: 1s;
        }
        span {
+           user-select: none;
            font-size: 25px;
            font-family: lato;
            margin-right: 5px;
@@ -69,7 +72,10 @@
            border: solid 2px black;
            padding-left: 10px;
            padding-right: 10px;
+       }
 
+       .slider {
+           user-select: none;
        }
        </style>
         
@@ -93,13 +99,39 @@
             
         }
 
+        var toogle = 2;
+
+        function btnauto() {
+            toogle++;
+            if(toogle >2) toogle = 1;
+            return check();
+            
+        }
+
+        function check() {
+            if(toogle == 1) {
+                document.getElementById("auto").style = "background-color: green;";
+                return auto();
+            }
+            else if(toogle == 2) document.getElementById("auto").style = "background-color: red;";
+
+        }
+
+        function auto() {
+            if(toogle == 1) {
+                setTimeout("auto();", 12500);
+                setTimeout("next();", 12500);
+            }
+
+        }
+
         function slajd() {
             
             var file = "<img src=\"photos/photo" + numerslajdu + ".png\"/>" ;
             document.getElementById("slide").innerHTML = file;
             document.getElementById("numerslide").innerHTML = numerslajdu;
-            
-            
+
+            document.getElementById("title").innerHTML = "Piękne miejca - " + numerslajdu;
             
             
         }
@@ -108,15 +140,16 @@
        </script>
 
     </head> 
-    <body onload="slajd()" id="body">
-        <title>Piękne miejsca</title>
-        <div class="title">Piękne miejsca</div>
+    <body onload="slajd(); check();" id="body">
+        <title id="title">Piękne miejsca</title>
+        <div class="title" i>Piękne miejsca</div>
         
-        <div id="slide"></div>
+        <div id="slide" class="slider"></div>
         <center>       
-            <input type="submit" value="<< Poprzednie" onclick="back()">
+            <input type="submit" value="<< Poprzednie" onclick="back()" class="btn-img">
             <span id="numerslide"></span>
-            <input type="submit" value="Następne >>" onclick="next()">
+            <input type="submit" value="Następne >>" onclick="next()" class="btn-img">
+            <input type="submit" value="Auto" onclick="btnauto()" id="auto">
         </center>
 
         
